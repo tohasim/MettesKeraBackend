@@ -2,7 +2,7 @@
 
 ## The names of all members
 - Alexander Soltani
-- Sadek Alsukafi
+- Sadek Alsukafi YO
 - Carl Harlang
 - Tore Simonsen
 - Simone Gottbrecht TEEST
