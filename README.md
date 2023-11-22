@@ -5,7 +5,7 @@
 - Sadek Alsukafi
 - Carl Harlang
 - Tore Simonsen
-- Simone Gottbrecht
+- Simone Gottbrecht TEEST
 
 ## Days and times when you plan to meet
 - Wednesday online
