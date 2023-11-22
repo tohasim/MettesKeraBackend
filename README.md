@@ -1,9 +1,9 @@
 # README
 
-Hej Alexander er her
+
 
 ## The names of all members
-- Alexander Soltani
+- Alexander Soltani TEST
 - Sadek Alsukafi
 - Carl Harlang
 - Tore Simonsen
