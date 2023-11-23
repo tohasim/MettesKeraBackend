@@ -1,6 +1,7 @@
 package dat3.rename_me.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,5 +20,10 @@ public class Product {
     private String description;
     private double price;
     private String imageUrl;
-
+/*
+    @ManyToOne
+        @JsonBackReference
+/*
+    Stock stock;
+*/
 }

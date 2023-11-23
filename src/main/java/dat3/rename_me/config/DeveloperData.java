@@ -18,7 +18,7 @@ public class DeveloperData {
         this.productRepository = productRepository;
     }
 
-    @Override
+   // @Override
     public void run(ApplicationArguments args) throws Exception {
         List<Product> products = ProductTestDataFactory.generateTestProducts();
         productRepository.saveAll(products);
