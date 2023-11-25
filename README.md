@@ -1,13 +1,11 @@
 # README
 
-
-
 ## The names of all members
-- Alexander Soltani TEST
-- Sadek Alsukafi
+- Alexander Soltani
+- Sadek Alsukafi YO
 - Carl Harlang
 - Tore Simonsen
-- Simone Gottbrecht
+- Simone Gottbrecht TEEST
 
 ## Days and times when you plan to meet
 - Wednesday online
