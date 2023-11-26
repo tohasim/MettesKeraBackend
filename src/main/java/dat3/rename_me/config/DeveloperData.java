@@ -5,12 +5,13 @@ import dat3.Application;
 import dat3.rename_me.entity.Product;
 import dat3.rename_me.repository.ProductRepository;
 import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
 @Configuration
-public class DeveloperData {
+public class DeveloperData implements ApplicationRunner {
 
     ProductRepository productRepository;
 
@@ -18,7 +19,8 @@ public class DeveloperData {
         this.productRepository = productRepository;
     }
 
-   // @Override
+
+    @Override
     public void run(ApplicationArguments args) throws Exception {
         List<Product> products = ProductTestDataFactory.generateTestProducts();
         productRepository.saveAll(products);

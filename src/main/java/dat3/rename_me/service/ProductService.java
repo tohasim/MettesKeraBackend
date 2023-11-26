@@ -23,10 +23,10 @@ public class ProductService extends Product {
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
-/*
-    public Product getProductByName(String name) {
-        return productRepository.findById().orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
 
-    }*/
+   /* public Product getProductByName(String name) {
+       return productRepository.findById(name)Throw(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
 
+    }
+*/
 }
