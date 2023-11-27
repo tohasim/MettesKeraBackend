@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,8 +22,13 @@ public class ProductService{
         this.productRepository = productRepository;
     }
 
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+    public List<ProductResponse> getAllProducts() {
+        List<ProductResponse> productResponses = new ArrayList<>();
+        for (Product product : productRepository.findAll()) {
+            productResponses.add(getProduct(product.getId(), false));
+        }
+        return productResponses;
+
     }
 
     public ProductResponse getProduct(Integer id, boolean includeDetails) {

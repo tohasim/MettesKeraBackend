@@ -21,6 +21,7 @@ public class ProductResponse {
     String imageUrl;
 
 
+
 public ProductResponse(Product pr, boolean includeAll){
     this.id = pr.getId();
     this.name = pr.getName();

@@ -21,9 +21,10 @@ public class ProductController {
 
 
     @GetMapping
-    public List<Product> getAllProducts() {
+    public List<ProductResponse> getAllProducts() {
        return productService.getAllProducts();
     }
+
     @GetMapping("/{id}")
     public ProductResponse getProductDetailed(@PathVariable Integer id){
         return productService.getProduct(id, true);
