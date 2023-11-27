@@ -1,5 +1,6 @@
 package dat3.rename_me.service;
 
+import dat3.rename_me.dto.ProductResponse;
 import dat3.rename_me.entity.Product;
 import dat3.rename_me.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 
 
 @Service
-public class ProductService {
+public class ProductService extends Product {
 
     private final ProductRepository productRepository;
 
@@ -24,4 +25,17 @@ public class ProductService {
         return productRepository.findAll();
     }
 
+    public ProductResponse getProduct(Long id, boolean includeDetails) {
+        Product product = productRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Product with this id not found"));
+        return new ProductResponse(product, includeDetails);
+    }
+/*
+    public Product getProductByName(String name) {
+        return productRepository.findById().orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
+
+   /* public Product getProductByName(String name) {
+       return productRepository.findById(name)Throw(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
+
+    }
+*/
 }
