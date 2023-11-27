@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @Service
-public class ProductService extends Product {
+public class ProductService{
 
     private final ProductRepository productRepository;
 
@@ -25,7 +25,7 @@ public class ProductService extends Product {
         return productRepository.findAll();
     }
 
-    public ProductResponse getProduct(Long id, boolean includeDetails) {
+    public ProductResponse getProduct(Integer id, boolean includeDetails) {
         Product product = productRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Product with this id not found"));
         return new ProductResponse(product, includeDetails);
     }
