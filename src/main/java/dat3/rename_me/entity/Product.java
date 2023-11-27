@@ -19,11 +19,8 @@ public class Product {
     private String type;
     private String description;
     private double price;
-    private String imageUrl;
-/*
-    @ManyToOne
-        @JsonBackReference
-/*
-    Stock stock;
-*/
+    private String imageUrl; //ManyToOne
+    private int stock;
+
+
 }

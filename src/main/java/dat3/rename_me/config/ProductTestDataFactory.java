@@ -28,8 +28,9 @@ public class ProductTestDataFactory {
             String description = "Beskrivelse for " + name;
             double price = 100 + (900 * random.nextDouble()); // Random price between 100 and 1000
             String imageUrl = "url_for_" + name;
+            int stock = random.nextInt(0, 10);
 
-            Product product = new Product(id, name, type, description, price, imageUrl);
+            Product product = new Product(id, name, type, description, price, imageUrl, stock);
             products.add(product);
         }
 
