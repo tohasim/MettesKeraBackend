@@ -10,6 +10,10 @@ import lombok.*;
 @Builder
 public class CategoryRequest {
     String name;
-    String type;
 
+
+
+    public static CategoryRequest getCategory(Category category) {
+        return new CategoryRequest(category.getName());
+    }
 }

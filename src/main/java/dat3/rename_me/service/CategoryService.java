@@ -1,27 +1,39 @@
 package dat3.rename_me.service;
 
-import dat3.rename_me.api.CategoryController;
+import dat3.rename_me.api.CategoryDTO;
 import dat3.rename_me.entity.Category;
 import dat3.rename_me.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+@Service
 public class CategoryService {
     private List<Category> categories;
+    private final CategoryRepository categoryRepository;
 
-    public CategoryService() {
+
+
+    public CategoryService(CategoryRepository categoryRepository, List<Category> categories) {
         this.categories = new ArrayList<>();
+        this.categoryRepository = categoryRepository;
+    }
+    public List<CategoryDTO> getAllCategories() {
+        List<Category> categories = categoryRepository.findAll();
+        return categories.stream()
+                .map(CategoryDTO::fromEntity)
+                .collect(Collectors.toList());
     }
 
-    public void addCategory(CategoryController categoryController) {
-        if (!categoryExists(categoryController.getName())) {
-            Category newCategory = CategoryMapper.convertToEntity(categoryController);
+    public void addCategory(CategoryDTO categoryDTO) {
+        if (!categoryExists(categoryDTO.getName())) {
+            Category newCategory = CategoryMapper.convertToEntity(categoryDTO);
             categories.add(newCategory);
-            System.out.println("Category added: " + categoryController.getName());
+            System.out.println("Category added: " + categoryDTO.getName());
         } else {
-            System.out.println("Category already exists: " + categoryController.getName());
+            System.out.println("Category already exists: " + categoryDTO.getName());
         }
     }
     private boolean categoryExists(String categoryName) {
@@ -34,8 +46,8 @@ public class CategoryService {
     }
 
     private static class CategoryMapper {
-        static Category convertToEntity(CategoryController categoryController) {
-            return new Category(categoryController.getId(), categoryController.getName());
+        static Category convertToEntity(CategoryDTO categoryDTO) {
+            return new Category(categoryDTO.getId(), categoryDTO.getName());
         }
     }
 }
