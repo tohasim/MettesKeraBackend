@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Service
-public class ProductService extends Product {
+public class ProductService {
 
     private final ProductRepository productRepository;
 
@@ -24,9 +24,4 @@ public class ProductService extends Product {
         return productRepository.findAll();
     }
 
-   /* public Product getProductByName(String name) {
-       return productRepository.findById(name)Throw(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product not found"));
-
-    }
-*/
 }
