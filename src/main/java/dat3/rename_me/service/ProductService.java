@@ -33,6 +33,9 @@ public class ProductService {
 
     public ProductResponse addProduct(ProductRequest productRequest) {
         Product product = ProductRequest.productFromProductRequest(productRequest);
+        for (Product.ProductImage image : product.getImages()) {
+            image.setProduct(product);
+        }
         return new ProductResponse(productRepository.save( product), true);
     }
 /*
