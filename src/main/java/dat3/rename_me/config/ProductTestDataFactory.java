@@ -21,7 +21,7 @@ public class ProductTestDataFactory {
         Random random = new Random();
         List<Product> products = new ArrayList<>();
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             int id = i;
             String name = types.get(random.nextInt(types.size()));
             String type = danishNames.get(random.nextInt(danishNames.size()));
