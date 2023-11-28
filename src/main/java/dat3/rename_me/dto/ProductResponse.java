@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import dat3.rename_me.entity.Product;
 import lombok.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,14 +21,14 @@ public class ProductResponse {
     String type;
     String description;
     Double price;
-    String imageUrl;
+    List<String> imageUrls;
 
 
 public ProductResponse(Product pr, boolean includeAll){
     this.id = pr.getId();
     this.name = pr.getName();
     this.price = pr.getPrice();
-    this.imageUrl = pr.getImageUrl();
+    this.imageUrls = pr.getImages().stream().map(Product.ProductImage::getImageUrl).collect(Collectors.toList());
     if(includeAll) {
         this.type = pr.getType();
         this.description = pr.getDescription();

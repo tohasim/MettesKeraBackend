@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -41,7 +42,7 @@ public class ProductController {
             @RequestParam("description") String description,
             @RequestParam("category") String category,
             @RequestParam("price") double price,
-            @RequestParam(value = "image", required = false) MultipartFile imageFile) {
+            @RequestParam(value = "imageFiles", required = false) List<MultipartFile> imageFiles) {
 
         ProductRequest productRequest = new ProductRequest();
         // Set fields in productRequest from the request parameters
@@ -50,10 +51,13 @@ public class ProductController {
         productRequest.setType(category);
         productRequest.setPrice(price);
 
-        if (imageFile != null && !imageFile.isEmpty()) {
-            // Upload file to Azure Blob Storage and get the URL
-            String imageUrl = azureStorageService.uploadFile(imageFile, String.format("%s/%s", category, name)); // Replace "container-name" with your actual container name
-            productRequest.setImageUrl(imageUrl); // Set the URL in the ProductRequest
+        if (imageFiles != null && !imageFiles.isEmpty()) {
+            List<String> imageUrls = new ArrayList<>();
+            for (MultipartFile imageFile : imageFiles) {
+                // Upload file to Azure Blob Storage and get the URL, categorized by their category and name
+                imageUrls.add(azureStorageService.uploadFile(imageFile, String.format("%s/%s", category, name)));
+            }
+            productRequest.setImageUrls(imageUrls); // Set the URL in the ProductRequest
         }
 
 

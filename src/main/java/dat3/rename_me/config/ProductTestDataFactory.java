@@ -23,14 +23,20 @@ public class ProductTestDataFactory {
 
         for (int i = 0; i < 50; i++) {
             int id = i;
-            String name = types.get(random.nextInt(types.size()));
+            String name = types.get(random.nextInt(types.size())) + i;
             String type = danishNames.get(random.nextInt(danishNames.size()));
             String description = "Beskrivelse for " + name;
             double price = 100 + (900 * random.nextDouble()); // Random price between 100 and 1000
-            String imageUrl = "url_for_" + name;
+            List<Product.ProductImage> images = new ArrayList<>();
+            for (int j = 0; j < 3; j++) {
+                images.add(Product.ProductImage.builder().imageUrl("url_for_" + name + i).build());
+            }
             int stock = random.nextInt(0, 10);
 
-            Product product = new Product(id, name, type, description, price, imageUrl, stock);
+            Product product = new Product(id, name, type, description, price, stock, images);
+            for (Product.ProductImage image : images) {
+                image.setProduct(product);
+            }
             products.add(product);
         }
 
