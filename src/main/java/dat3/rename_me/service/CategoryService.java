@@ -3,6 +3,7 @@ package dat3.rename_me.service;
 import dat3.rename_me.api.CategoryDTO;
 import dat3.rename_me.entity.Category;
 import dat3.rename_me.repository.CategoryRepository;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class CategoryService {
             System.out.println("Category already exists: " + categoryDTO.getName());
         }
     }
-    private boolean categoryExists(String categoryName) {
+    public boolean categoryExists(String categoryName) {
         for (Category category : categories) {
             if (category.getName().equalsIgnoreCase(categoryName)) {
                 return true;
