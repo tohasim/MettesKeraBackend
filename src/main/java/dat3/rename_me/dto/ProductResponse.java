@@ -23,11 +23,12 @@ public class ProductResponse {
 
 
 public ProductResponse(Product pr, boolean includeAll){
-    this.id = pr.getId();
+
     this.name = pr.getName();
     this.price = pr.getPrice();
     this.imageUrl = pr.getImageUrl();
     if(includeAll) {
+        this.id = pr.getId();
         this.type = pr.getType();
         this.description = pr.getDescription();
     }
