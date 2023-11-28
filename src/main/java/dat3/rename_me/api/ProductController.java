@@ -39,20 +39,20 @@ public class ProductController {
     public ResponseEntity<ProductResponse> addProduct(
             @RequestParam("name") String name,
             @RequestParam("description") String description,
-            @RequestParam("type") String type,
+            @RequestParam("category") String category,
             @RequestParam("price") double price,
-            @RequestParam(value = "imageUrl", required = false) MultipartFile imageFile) {
+            @RequestParam(value = "image", required = false) MultipartFile imageFile) {
 
         ProductRequest productRequest = new ProductRequest();
         // Set fields in productRequest from the request parameters
         productRequest.setName(name);
         productRequest.setDescription(description);
-        productRequest.setType(type);
+        productRequest.setType(category);
         productRequest.setPrice(price);
 
         if (imageFile != null && !imageFile.isEmpty()) {
             // Upload file to Azure Blob Storage and get the URL
-            String imageUrl = azureStorageService.uploadFile(imageFile, "container-name"); // Replace "container-name" with your actual container name
+            String imageUrl = azureStorageService.uploadFile(imageFile, String.format("%s/%s", category, name)); // Replace "container-name" with your actual container name
             productRequest.setImageUrl(imageUrl); // Set the URL in the ProductRequest
         }
 

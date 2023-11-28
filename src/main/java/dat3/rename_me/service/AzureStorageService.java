@@ -17,11 +17,13 @@ public class AzureStorageService {
     private final BlobServiceClient blobServiceClient;
     private final String containerName;
 
+    //Constructor injection for dependencies
     public AzureStorageService(BlobServiceClient blobServiceClient,
                                @Value("${azure.storage.container-name}") String containerName) {
         this.blobServiceClient = blobServiceClient;
         this.containerName = containerName;
     }
+
 
     public String uploadFile(MultipartFile file, String directory) {
         try {
