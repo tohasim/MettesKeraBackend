@@ -20,8 +20,7 @@ public class Product {
 
     @Column(unique = true)
     private String name;
-
-    private String type;
+    private String category;
     private String description;
     private double price;
     private int stock;
