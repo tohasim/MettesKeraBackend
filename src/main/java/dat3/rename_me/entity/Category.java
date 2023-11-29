@@ -1,9 +1,6 @@
 package dat3.rename_me.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Setter
@@ -16,7 +13,10 @@ public class Category {
     @Id
             @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+    @Column(unique = true)
     String name;
 
-
+    public Category(String name) {
+        this.name = name;
+    }
 }

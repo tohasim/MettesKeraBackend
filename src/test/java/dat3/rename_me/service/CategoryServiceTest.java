@@ -1,5 +1,5 @@
 package dat3.rename_me.service;
-import dat3.rename_me.api.CategoryDTO;
+import dat3.rename_me.dto.CategoryResponse;
 import dat3.rename_me.entity.Category;
 import dat3.rename_me.repository.CategoryRepository;
 import org.junit.jupiter.api.Test;
@@ -32,7 +32,7 @@ class CategoryServiceTest {
         when(categoryRepository.findAll()).thenReturn(Arrays.asList(category1, category2));
 
         // Act
-        List<CategoryDTO> result = categoryService.getAllCategories();
+        List<CategoryResponse> result = categoryService.getAllCategories();
 
         // Assert
         assertEquals(2, result.size());

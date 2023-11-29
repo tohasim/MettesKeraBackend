@@ -1,4 +1,6 @@
 package dat3.rename_me.api;
+import dat3.rename_me.dto.CategoryRequest;
+import dat3.rename_me.dto.CategoryResponse;
 import dat3.rename_me.service.CategoryService;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,9 +37,9 @@ class CategoryControllerTest {
     void getAllCategories() throws Exception {
         // Arrange
         when(categoryService.getAllCategories()).thenReturn(Arrays.asList(
-                new CategoryDTO(1, "Kander"),
-                new CategoryDTO(2, "Kopper"),
-                new CategoryDTO(3,"ske")
+                new CategoryResponse(1, "Kander"),
+                new CategoryResponse(2, "Kopper"),
+                new CategoryResponse(3,"ske")
         ));
 
         // Act & Assert
@@ -50,10 +52,9 @@ class CategoryControllerTest {
 
     @Test
     void addCategory_CategoryDoesNotExist() {
-        int categoryId = 4;
-        CategoryDTO categoryDTO = new CategoryDTO(categoryId, "talerkener");
+        CategoryRequest categoryRequest = new CategoryRequest("talerkener");
 
-        categoryService.addCategory(categoryDTO);
+        categoryService.addCategory(categoryRequest);
 
         verify(categoryService, times(1)).addCategory(any());
     }

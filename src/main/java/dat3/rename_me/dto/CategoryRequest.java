@@ -11,6 +11,10 @@ import lombok.*;
 public class CategoryRequest {
     String name;
 
+    public static Category getCategoryEntity(CategoryRequest categoryRequest){
+        return new Category(categoryRequest.getName());
+    }
+
 
 
     public static CategoryRequest getCategory(Category category) {
