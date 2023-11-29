@@ -2,10 +2,10 @@
 
 ## The names of all members
 - Alexander Soltani
-- Sadek Alsukafi
+- Sadek Alsukafi YO
 - Carl Harlang
 - Tore Simonsen
-- Simone Gottbrecht
+- Simone Gottbrecht TEEST
 
 ## Days and times when you plan to meet
 - Wednesday online
