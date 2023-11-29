@@ -7,6 +7,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -43,9 +45,11 @@ class CategoryControllerTest {
         ));
 
         // Act & Assert
-        mockMvc.perform(get("/categories"))
+        mockMvc.perform(get("/api/categories")
+                .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isOk())
-                .andExpect(content().json("[{\"id\":1,\"name\":\"Kander\"},{\"id\":2,\"name\":\"Kopper\"},{\"id\": 3,\"name\":\"ske\"}]"));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().json("[{\"id\":1,\"name\":\"Kander\"},{\"id\":2,\"name\":\"Kopper\"},{\"id\":3,\"name\":\"ske\"}]"));
     }
 
 
