@@ -1,5 +1,6 @@
 package dat3.rename_me.service;
 
+import dat3.rename_me.dto.ProductRequest;
 import dat3.rename_me.dto.ProductResponse;
 import dat3.rename_me.entity.Product;
 import dat3.rename_me.repository.ProductRepository;
@@ -13,7 +14,7 @@ import java.util.List;
 
 
 @Service
-public class ProductService{
+public class ProductService {
 
     private final ProductRepository productRepository;
 
@@ -34,6 +35,14 @@ public class ProductService{
     public ProductResponse getProduct(Integer id, boolean includeDetails) {
         Product product = productRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Product with this id not found"));
         return new ProductResponse(product, includeDetails);
+    }
+
+    public ProductResponse addProduct(ProductRequest productRequest) {
+        Product product = ProductRequest.productFromProductRequest(productRequest);
+        for (Product.ProductImage image : product.getImages()) {
+            image.setProduct(product);
+        }
+        return new ProductResponse(productRepository.save( product), true);
     }
 /*
     public Product getProductByName(String name) {
