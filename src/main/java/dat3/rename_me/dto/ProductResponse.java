@@ -24,12 +24,14 @@ public class ProductResponse {
     List<String> imageUrls;
 
 
+
 public ProductResponse(Product pr, boolean includeAll){
-    this.id = pr.getId();
+
     this.name = pr.getName();
     this.price = pr.getPrice();
     this.imageUrls = pr.getImages().stream().map(Product.ProductImage::getImageUrl).collect(Collectors.toList());
     if(includeAll) {
+        this.id = pr.getId();
         this.type = pr.getType();
         this.description = pr.getDescription();
     }

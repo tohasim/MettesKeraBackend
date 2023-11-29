@@ -29,9 +29,10 @@ public class ProductController {
     @Autowired
     private AzureStorageService azureStorageService; // Service to handle Azure Blob Storage operations
     @GetMapping
-    public List<Product> getAllProducts() {
+    public List<ProductResponse> getAllProducts() {
        return productService.getAllProducts();
     }
+
     @GetMapping("/{id}")
     public ProductResponse getProductDetailed(@PathVariable Integer id){
         return productService.getProduct(id, true);
