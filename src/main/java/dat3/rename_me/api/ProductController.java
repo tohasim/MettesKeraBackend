@@ -49,7 +49,7 @@ public class ProductController {
         // Set fields in productRequest from the request parameters
         productRequest.setName(name);
         productRequest.setDescription(description);
-        productRequest.setType(category);
+        productRequest.setCategory(category);
         productRequest.setPrice(price);
 
         if (imageFiles != null && !imageFiles.isEmpty()) {

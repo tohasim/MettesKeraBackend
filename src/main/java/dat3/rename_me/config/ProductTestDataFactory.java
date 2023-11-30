@@ -24,7 +24,7 @@ public class ProductTestDataFactory {
         for (int i = 0; i < 10; i++) {
             int id = i;
             String name = types.get(random.nextInt(types.size())) + i;
-            String type = danishNames.get(random.nextInt(danishNames.size()));
+            String category = danishNames.get(random.nextInt(danishNames.size()));
             String description = "Beskrivelse for " + name;
             double price = 100 + (900 * random.nextDouble()); // Random price between 100 and 1000
             List<Product.ProductImage> images = new ArrayList<>();
@@ -33,7 +33,7 @@ public class ProductTestDataFactory {
             }
             int stock = random.nextInt(0, 10);
 
-            Product product = new Product(id, name, type, description, price, stock, images);
+            Product product = new Product(id, name, category, description, price, stock, images);
             for (Product.ProductImage image : images) {
                 image.setProduct(product);
             }
