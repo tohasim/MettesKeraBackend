@@ -29,6 +29,14 @@ public class ProductService {
             productResponses.add(getProduct(product.getId(), false));
         }
         return productResponses;
+    }
+
+    public List<ProductResponse> getAllProductsDetails() {
+        List<ProductResponse> productResponses = new ArrayList<>();
+        for (Product product : productRepository.findAll()) {
+            productResponses.add(getProduct(product.getId(), true));
+        }
+        return productResponses;
 
     }
 
