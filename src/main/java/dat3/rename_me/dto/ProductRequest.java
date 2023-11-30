@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class ProductRequest {
-    private String type;
+    private String category;
     private String name;
     private String description;
     private double price;
@@ -26,6 +26,6 @@ public class ProductRequest {
             prImages.add(Product.ProductImage.builder().imageUrl(imageUrl).build());
         }
 
-        return Product.builder().type(pr.type).name(pr.name).description(pr.description).images(prImages).price(pr.price).build();
+        return Product.builder().category(pr.category).name(pr.name).description(pr.description).images(prImages).price(pr.price).build();
     }
 }

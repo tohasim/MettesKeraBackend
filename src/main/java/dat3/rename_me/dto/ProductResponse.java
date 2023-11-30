@@ -18,7 +18,7 @@ public class ProductResponse {
 
     int id;
     String name;
-    String type;
+    String category;
     String description;
     Double price;
     List<String> imageUrls;
@@ -32,7 +32,7 @@ public ProductResponse(Product pr, boolean includeAll){
     this.imageUrls = pr.getImages().stream().map(Product.ProductImage::getImageUrl).collect(Collectors.toList());
     if(includeAll) {
         this.id = pr.getId();
-        this.type = pr.getType();
+        this.category = pr.getCategory();
         this.description = pr.getDescription();
     }
 }
