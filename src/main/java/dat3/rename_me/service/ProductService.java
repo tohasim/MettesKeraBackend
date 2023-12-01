@@ -2,6 +2,7 @@ package dat3.rename_me.service;
 
 import dat3.rename_me.dto.ProductRequest;
 import dat3.rename_me.dto.ProductResponse;
+import dat3.rename_me.entity.Category;
 import dat3.rename_me.entity.Product;
 import dat3.rename_me.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,12 @@ import java.util.List;
 public class ProductService {
 
     private final ProductRepository productRepository;
+    private final CategoryService categoryService;
 
     @Autowired
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, CategoryService categoryService) {
         this.productRepository = productRepository;
+        this.categoryService = categoryService;
     }
 
     public List<ProductResponse> getAllProducts() {
@@ -38,11 +41,15 @@ public class ProductService {
     }
 
     public ProductResponse addProduct(ProductRequest productRequest) {
+        Category category = categoryService.getCategory(productRequest.getCategory());
         Product product = ProductRequest.productFromProductRequest(productRequest);
+
         for (Product.ProductImage image : product.getImages()) {
             image.setProduct(product);
         }
-        return new ProductResponse(productRepository.save( product), true);
+        product.setCategory(category);
+        category.addProduct(product);
+        return new ProductResponse(productRepository.save(product), true);
     }
 /*
     public Product getProductByName(String name) {
