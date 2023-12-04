@@ -32,7 +32,7 @@ public ProductResponse(Product pr, boolean includeAll){
     this.imageUrls = pr.getImages().stream().map(Product.ProductImage::getImageUrl).collect(Collectors.toList());
     if(includeAll) {
         this.id = pr.getId();
-        this.category = pr.getCategory();
+        this.category = pr.getCategory().getName();
         this.description = pr.getDescription();
     }
 }

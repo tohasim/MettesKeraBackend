@@ -4,7 +4,9 @@ import dat3.rename_me.dto.CategoryRequest;
 import dat3.rename_me.dto.CategoryResponse;
 import dat3.rename_me.entity.Category;
 import dat3.rename_me.repository.CategoryRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,5 +37,8 @@ public class CategoryService {
         }
     }
 
+    public Category getCategory(String category) {
+        return categoryRepository.findByName(category).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Category with this name not found"));
+    }
 }
 

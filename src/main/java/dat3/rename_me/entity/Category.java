@@ -3,6 +3,9 @@ package dat3.rename_me.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -15,8 +18,16 @@ public class Category {
     int id;
     @Column(unique = true)
     String name;
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 
     public Category(String name) {
         this.name = name;
+        this.products = new ArrayList<>();
+    }
+
+
+    public void addProduct(Product product) {
+        products.add(product);
     }
 }

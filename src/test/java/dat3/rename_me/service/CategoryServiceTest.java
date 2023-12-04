@@ -26,8 +26,8 @@ class CategoryServiceTest {
     @Test
     void getAllCategories() {
         // Arrange
-        Category category1 = new Category(1, "Kopper");
-        Category category2 = new Category(2, "Kander");
+        Category category1 = new Category("Kopper");
+        Category category2 = new Category("Kander");
 
         when(categoryRepository.findAll()).thenReturn(Arrays.asList(category1, category2));
 

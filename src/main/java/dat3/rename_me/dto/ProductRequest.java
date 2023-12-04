@@ -1,6 +1,7 @@
 package dat3.rename_me.dto;
 
 
+import dat3.rename_me.entity.Category;
 import dat3.rename_me.entity.Product;
 import lombok.*;
 
@@ -26,6 +27,6 @@ public class ProductRequest {
             prImages.add(Product.ProductImage.builder().imageUrl(imageUrl).build());
         }
 
-        return Product.builder().category(pr.category).name(pr.name).description(pr.description).images(prImages).price(pr.price).build();
+        return Product.builder().name(pr.name).description(pr.description).images(prImages).price(pr.price).build();
     }
 }
