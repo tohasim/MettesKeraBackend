@@ -37,6 +37,11 @@ public class ProductController {
     public ProductResponse getProductDetailed(@PathVariable Integer id){
         return productService.getProduct(id, true);
     }
+
+    @GetMapping("/detailed")
+    public List<ProductResponse> getAllProductsDetails() {return productService.getAllProductsDetails();
+    }
+
     @PostMapping("/addProduct")
     public ResponseEntity<ProductResponse> addProduct(
             @RequestParam("name") String name,
