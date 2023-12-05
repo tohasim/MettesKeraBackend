@@ -1,8 +1,8 @@
-package dat3.rename_me.dto;
+package dat3.MetteKera.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import dat3.rename_me.entity.Product;
+import dat3.MetteKera.entity.Product;
 import lombok.*;
 
 import java.util.List;

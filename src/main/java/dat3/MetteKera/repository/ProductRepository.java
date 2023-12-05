@@ -1,7 +1,7 @@
-package dat3.rename_me.repository;
+package dat3.MetteKera.repository;
 
 
-import dat3.rename_me.entity.Product;
+import dat3.MetteKera.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {

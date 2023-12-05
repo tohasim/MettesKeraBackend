@@ -1,14 +1,13 @@
-package dat3.rename_me.service;
+package dat3.MetteKera.service;
 
-import dat3.rename_me.dto.CategoryRequest;
-import dat3.rename_me.dto.CategoryResponse;
-import dat3.rename_me.entity.Category;
-import dat3.rename_me.repository.CategoryRepository;
+import dat3.MetteKera.dto.CategoryRequest;
+import dat3.MetteKera.dto.CategoryResponse;
+import dat3.MetteKera.entity.Category;
+import dat3.MetteKera.repository.CategoryRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -1,10 +1,10 @@
-package dat3.rename_me.service;
+package dat3.MetteKera.service;
 
-import dat3.rename_me.dto.ProductRequest;
-import dat3.rename_me.dto.ProductResponse;
-import dat3.rename_me.entity.Category;
-import dat3.rename_me.entity.Product;
-import dat3.rename_me.repository.ProductRepository;
+import dat3.MetteKera.dto.ProductRequest;
+import dat3.MetteKera.dto.ProductResponse;
+import dat3.MetteKera.entity.Category;
+import dat3.MetteKera.entity.Product;
+import dat3.MetteKera.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

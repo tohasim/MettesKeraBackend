@@ -1,7 +1,6 @@
-package dat3.rename_me.entity;
+package dat3.MetteKera.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 

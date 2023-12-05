@@ -1,4 +1,4 @@
-package dat3.rename_me.entity;
+package dat3.MetteKera.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

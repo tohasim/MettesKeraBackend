@@ -1,4 +1,4 @@
-package dat3.rename_me.service;
+package dat3.MetteKera.service;
 
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
