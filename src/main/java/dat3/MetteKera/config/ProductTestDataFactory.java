@@ -1,11 +1,11 @@
-package dat3.rename_me.config;
+package dat3.MetteKera.config;
 
 
 
-import dat3.rename_me.entity.Category;
-import dat3.rename_me.entity.Product;
-import dat3.rename_me.repository.CategoryRepository;
-import dat3.rename_me.repository.ProductRepository;
+import dat3.MetteKera.entity.Category;
+import dat3.MetteKera.entity.Product;
+import dat3.MetteKera.repository.CategoryRepository;
+import dat3.MetteKera.repository.ProductRepository;
 
 import java.util.*;
 

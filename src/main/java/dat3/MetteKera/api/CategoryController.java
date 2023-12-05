@@ -1,9 +1,8 @@
-package dat3.rename_me.api;
+package dat3.MetteKera.api;
 
-import dat3.rename_me.dto.CategoryRequest;
-import dat3.rename_me.dto.CategoryResponse;
-import dat3.rename_me.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import dat3.MetteKera.dto.CategoryRequest;
+import dat3.MetteKera.dto.CategoryResponse;
+import dat3.MetteKera.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,8 +1,7 @@
-package dat3.rename_me.dto;
+package dat3.MetteKera.dto;
 
 
-import dat3.rename_me.entity.Category;
-import dat3.rename_me.entity.Product;
+import dat3.MetteKera.entity.Product;
 import lombok.*;
 
 import java.util.ArrayList;

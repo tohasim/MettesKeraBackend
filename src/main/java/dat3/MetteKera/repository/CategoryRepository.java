@@ -1,6 +1,6 @@
-package dat3.rename_me.repository;
+package dat3.MetteKera.repository;
 
-import dat3.rename_me.entity.Category;
+import dat3.MetteKera.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

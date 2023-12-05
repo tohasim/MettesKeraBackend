@@ -1,5 +1,5 @@
-package dat3.rename_me.dto;
-import dat3.rename_me.entity.Category;
+package dat3.MetteKera.dto;
+import dat3.MetteKera.entity.Category;
 import lombok.*;
 @Setter
 @Getter

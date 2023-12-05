@@ -1,7 +1,7 @@
-package dat3.rename_me.service;
-import dat3.rename_me.dto.CategoryResponse;
-import dat3.rename_me.entity.Category;
-import dat3.rename_me.repository.CategoryRepository;
+package dat3.MetteKera.service;
+import dat3.MetteKera.dto.CategoryResponse;
+import dat3.MetteKera.entity.Category;
+import dat3.MetteKera.repository.CategoryRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -42,19 +42,4 @@ class CategoryServiceTest {
         verify(categoryRepository, times(1)).findAll();
     }
 
-    /*
-    @Test
-    void addCategory() {
-        // Arrange
-        CategoryDTO categoryDTO = new CategoryDTO(3, "Talerken");
-        Category categoryEntity = CategoryMapper.convertToEntity(categoryDTO);
-
-        // Act
-        categoryService.addCategory(categoryDTO);
-
-        // Assert
-        verify(categoryRepository, times(1)).save(categoryEntity);
-    }
-
-     */
 }

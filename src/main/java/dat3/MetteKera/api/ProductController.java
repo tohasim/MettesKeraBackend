@@ -1,15 +1,10 @@
-package dat3.rename_me.api;
+package dat3.MetteKera.api;
 
-import dat3.rename_me.dto.ProductRequest;
-import dat3.rename_me.dto.ProductResponse;
-import dat3.rename_me.entity.Product;
-import dat3.rename_me.service.AzureStorageService;
-import dat3.rename_me.service.ProductService;
+import dat3.MetteKera.dto.ProductRequest;
+import dat3.MetteKera.dto.ProductResponse;
+import dat3.MetteKera.service.AzureStorageService;
+import dat3.MetteKera.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;

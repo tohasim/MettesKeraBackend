@@ -1,10 +1,9 @@
-package dat3.rename_me.api;
-import dat3.rename_me.dto.CategoryRequest;
-import dat3.rename_me.dto.CategoryResponse;
-import dat3.rename_me.service.CategoryService;
+package dat3.MetteKera.api;
+import dat3.MetteKera.dto.CategoryRequest;
+import dat3.MetteKera.dto.CategoryResponse;
+import dat3.MetteKera.service.CategoryService;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpHeaders;
@@ -13,7 +12,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Arrays;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
