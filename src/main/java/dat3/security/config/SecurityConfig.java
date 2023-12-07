@@ -76,6 +76,11 @@ public class SecurityConfig {
                     mvcMatcherBuilder.pattern(HttpMethod.POST, "/api/categories")
             ).hasAuthority("ADMIN")
 
+            //Any
+            .requestMatchers(
+                    mvcMatcherBuilder.pattern("/api/**")
+            ).permitAll()
+
             //Use this to completely disable security (Will not work if endpoints has been marked with @PreAuthorize)
             //.requestMatchers(mvcMatcherBuilder.pattern("/**")).permitAll());
             .anyRequest().authenticated());
